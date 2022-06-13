@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<form class="container" id="template-form" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button class="btn btn-info" type="submit">Submit</button>
+</form>
+{% endblock content %}
