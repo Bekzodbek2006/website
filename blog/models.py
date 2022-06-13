@@ -15,3 +15,5 @@ class Chart(models.Model):
     country = models.CharField(max_length=30)
     litres = models.IntegerField(default=15)
     bottles = models.IntegerField(default=15)
+    def __str__(self):
+        return self.country
