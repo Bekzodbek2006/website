@@ -10,5 +10,5 @@ urlpatterns = [
     path("aboute/", aboute),
     path("skils/", skils),
     path("login/", register),
-    paht("signup/", Sign.as_view())
+    path("signup/", Sign.as_view(), name="signup")
 ]

@@ -28,7 +28,7 @@ def register(request):
         form = Registiration()
     return render(request, "form.html", {'form': form})
 
-class Register(generic.CreateView):
+class Sign(generic.CreateView):
     template_name = "registration/signup.html"
     form_class = Signup
 

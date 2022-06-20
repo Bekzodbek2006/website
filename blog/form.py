@@ -6,8 +6,14 @@ from .models import *
 User = get_user_model()
 
 
-User = get_user_model
 
+
+class Signup(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ("username",)
+        field_classes = {"username": UsernameField}
+        
 
 class Registiration(forms.ModelForm):
     class Meta:
@@ -17,10 +23,3 @@ class Registiration(forms.ModelForm):
             'last_name',
             'email',
         )
-
-class Signup(UserCreationForm):
-    class Meta:
-        model = User
-        fields = ("username",)
-        field_classes = {"username": UsernameField}
-        
