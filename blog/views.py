@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
+from django.views import generic
 from .models import *
-from .form import Registiration
+from .form import *
 def home(request):
     return render(request, 'home.html')
 
@@ -26,3 +27,10 @@ def register(request):
     else:
         form = Registiration()
     return render(request, "form.html", {'form': form})
+
+class Register(generic.CreateView):
+    template_name = "registration/signup.html"
+    form_class = Signup
+
+    def get_success_url(self):
+        return reverse("app:home")
